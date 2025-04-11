@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<template id="custom-paragraph">
+    <p>My paragraph</p>
+</template>
+</body>
+</html>
+
+<script>
+    let template = document.getElementById("custom-paragraph");
+    let templateContent = template.content;
+    document.body.appendChild(templateContent);
+</script>

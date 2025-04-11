@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<template id="my-element">
+    <style>
+        span {
+            color: red;
+            border: 2px dotted black;
+        }
+    </style>
+    <span>I'm in the shadow DOM</span>
+</template>
+
+<div id="host"></div>
+<span>I'm not in the shadow DOM</span>
+
+</body>
+</html>
+
+<script>
+    const host = document.querySelector("#host");
+    const shadow = host.attachShadow({mode: "open"});
+    const template = document.getElementById("my-element");
+
+    shadow.appendChild(template.content);
+</script>
